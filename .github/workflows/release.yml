@@ -92,6 +92,7 @@ jobs:
         run: tar -czf ${{ env.LINUX_ZIP_NAME }} *
           
       - uses: actions/upload-artifact@v3
+        working-directory: ${{ env.LINUX_APP_RELEASE_PATH }}
         with:
           name: ${{ github.run_id }}-linux
           path: ${{ env.LINUX_ZIP_NAME }}
